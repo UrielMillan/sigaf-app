@@ -5,7 +5,7 @@ import api from '../../services/axios-client';
 import createPost from '../../helpers/createPost';
 import { Button, FormControl, Input } from '@chakra-ui/react';
 
-class Login extends Component {
+class LoginContainer extends Component {
     constructor(props){
         super(props);
         this.schema = Yup.object().shape({
@@ -22,6 +22,9 @@ class Login extends Component {
         api.post('login.php', createPost(values))
         .then((response)=>{
             alert('si jalo ahi')
+        })
+        .catch((err)=>{
+            console.error(err.message);
         })
     }
 
@@ -76,4 +79,4 @@ class Login extends Component {
     }
 }
 
-export default Login;
+export default LoginContainer;

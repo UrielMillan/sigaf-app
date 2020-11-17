@@ -1,8 +1,8 @@
 import React from 'react';
-import Login from '../../containers/login';
-import './signin-style.css';
+import LoginContainer from '../../containers/loginContainer';
+import './login-style.css';
 
-const Signin = ({match}) =>{
+const Login = ({match}) =>{
     return(
         <div className='wrapper'>
             <div className='info-container'>
@@ -10,11 +10,11 @@ const Signin = ({match}) =>{
                     changos
                 </div>
                 <div className='form-container'>
-                    <Login />
+                    <LoginContainer />
                 </div>
             </div>
         </div>
     )
 }
 
-export default Signin;
+export default Login;
