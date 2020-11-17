@@ -1,14 +1,12 @@
 import { ChakraProvider } from "@chakra-ui/react"
-import { IconButton } from "@chakra-ui/react"
-import { SearchIcon } from '@chakra-ui/icons'
+import Dashboard from './pages/dashboard';
+import Signin from "./pages/signin";
 import './App.css';
 
 function App() {
   return (
     <ChakraProvider>
-      <div>
-        <IconButton aria-label="Search database" icon={<SearchIcon />} />
-      </div>
+      <Signin />
     </ChakraProvider>
   );
 }

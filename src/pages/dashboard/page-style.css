@@ -1,0 +1,24 @@
+.wrapper {
+    display: grid;
+    height: 100vh;
+    box-sizing: content-box;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px 1fr;
+    grid-template-areas: 
+        "header"
+        "main";
+}
+
+header{
+    grid-area: header;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding: 10px;
+    background-color:#E6E6FA;
+    border-bottom: 1px #D3D3D3 solid;
+}
+
+main{
+    grid-area: main;
+}
