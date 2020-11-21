@@ -1,8 +1,12 @@
 import { LOAD_SESION, NEW_SESION, CLOSE_SESION } from '../action-types';
 
 const initialState={
-    isLogged : false,
-    user: {},
+    isLogged : true,
+    user: {
+        id: 1,
+        name: 'Erick Uriel',
+        user_type: 1
+    },
 }
 
 const sesion = ( state=initialState, action)=>{

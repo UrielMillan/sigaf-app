@@ -1,19 +1,41 @@
+import React , { Component } from 'react';
+import { connect } from 'react-redux'
 import { ChakraProvider } from "@chakra-ui/react"
 import { Switch, Route, Redirect } from 'react-router-dom';
-import Dashboard from './pages/dashboard';
-import Login from './pages/login';
-import './App.css';
+import { loadSesion } from './redux/actions/sesionActions';
+import PrivateRoute from './util/PrivateRoute';
+import Login from './containers/login';
+import Header from './components/header';
+import Users from './containers/users';
+import './css/App.css';
 
-function App() {
-  return (
-    <ChakraProvider>
-      <Switch>
-          <Route path='/login' component={Login} exact={true} />
-          <Route path='/dashboard' component={Dashboard} exact={true} />
-          <Redirect to='/dashboard' />
-      </Switch>
-    </ChakraProvider>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount(){
+    
+  }
+
+  render(){
+    return (
+      <ChakraProvider>
+        {this.props.sesion.isLogged  ? <Header /> : null}
+        <Switch>
+          <Users />
+        </Switch>
+      </ChakraProvider>
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = state =>({
+  sesion: state.sesion
+});
+
+const mapDispatchToProps = dispatch =>({
+  loadSesion: (sesionData) => dispatch(loadSesion(sesionData))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

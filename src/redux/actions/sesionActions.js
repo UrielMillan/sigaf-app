@@ -5,7 +5,7 @@ export const loadSesion = (userData) =>({
     payload: userData
 });
 
-export const newSesion = (userdata) =>({
+export const newSesion = (userData) =>({
     type: NEW_SESION,
     payload: userData
 });

@@ -11,11 +11,11 @@ const store = createStore();
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
       <Provider store={store}>
-        <App />
+        <Router>
+          <App />
+        </Router>
       </Provider>
-    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const urlBase = 'http://localhost/saaf-api';
+const urlBase = 'http://localhost/sigaf-api';
 
 /**
  * @param {string}  url url a la cual consultar

@@ -9,7 +9,7 @@ import {
     DrawerOverlay,
     DrawerContent,
     DrawerCloseButton,
-  } from "@chakra-ui/react";
+} from "@chakra-ui/react";
 
 class Sidebar extends Component {
     constructor(props){
@@ -39,7 +39,7 @@ class Sidebar extends Component {
             <React.Fragment>
                 <IconButton 
                     icon={<HamburgerIcon w={8} h={8}/>} 
-                    size="lg"
+                    size="md"
                     colorScheme="blue"
                     aria-label="Open Menu"
                     onClick={this.onOpen}
