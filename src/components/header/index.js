@@ -14,7 +14,13 @@ import {
     AlertDialogHeader,
     AlertDialogContent,
     AlertDialogOverlay,
+    Menu,
+    MenuButton,
+    MenuList,
+    IconButton,
+    MenuItem
 } from '@chakra-ui/react';
+import {SettingsIcon} from '@chakra-ui/icons'
 import Sidebar from '../sidebar';
 
 class Header extends Component{
@@ -42,7 +48,7 @@ class Header extends Component{
     render(){
         {console.log(this.props.sesion)}
         return(
-            <Box h='60px' borderBottomWidth='1px'>
+            <Box h='60px' shadow='md'>
                 <Flex h='100%' align='center' p='20px'>
                     <Sidebar />
                     <Spacer />
@@ -63,8 +69,13 @@ class Header extends Component{
 const ProfileSettings = ({show, name, handleDialog, logOut}) =>{
     return(
         <React.Fragment>
-            <Button colorScheme='red' onClick={handleDialog}>Salir</Button>
             <Avatar name={name} />
+            <Menu >
+                <MenuButton as={IconButton} icon={<SettingsIcon />} />
+                <MenuList>
+                    <MenuItem onClick={handleDialog}>Salir</MenuItem>
+                </MenuList>
+            </Menu>
             <AlertDialog isOpen={show} onClose={handleDialog}>
                 <AlertDialogOverlay>
                     <AlertDialogContent>
